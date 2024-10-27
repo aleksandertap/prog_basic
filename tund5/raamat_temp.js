@@ -44,5 +44,5 @@ console.log("Keskmine temperatuur on " +averagetemp)
 let fahren = temperatures.map(cel => cel *9 /5 +32)
 console.log("Tempid Fahrenheitis : " + fahren)
 
-temperatures.sort();
-console.log("Temperatuurid on kahanevas järjekorras: " +temperatures.reverse())
+
+console.log("Temperatuurid on kahanevas järjekorras: " +temperatures.sort().reverse())
