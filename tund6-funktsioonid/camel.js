@@ -1,47 +1,24 @@
-// let text = prompt(
-//   "sisesta alustava väikse tähega ja lisa tühikuta sõnad suure tähega ritta "
-// );
-
-// function getWords(text) {
-//   return text.split(/(?=[A-Z])/g);
-// }
-// console.log(getWords(text));
-
-// function camelToTitleCase(text) {
-//   if (!text) {
-//     return "";
-//   }
-//   let words = getWords(text);
-//   return words
-//     .map((word) => {
-//       if (
-//         word.length === 1 &&
-//         word.charAt(0) === word.charAt(0).toUpperCase()
-//       ) {
-//         return word;
-//       }
-
-//       return word.charAt(0).toUpperCase() + word.slice(1);
-//     })
-//     .join(" ");
-
-// }
-// console.log(camelToTitleCase(text));
-
 function getWords(text) {
-  return text.split(/(?=[A-Z])/g);
+  let words = text.match(/([a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]*)/g);
+  return words.length === 1 ? words.join("") : words;
 }
-console.log(getWords("coolBeansSeeEEE"));
 
-function camelToTitleCase(text) {
+console.log(getWords("katseKatseSEEKatse"));
+
+function camelToTiTleCase(text) {
   if (!text) {
-    return "";
+    return " ";
   }
-  if (getWords.lenth===1){
-    return word.toUpperCase()
-  }
-  return text
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  let words = getWords(text);
+  return words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
-console.log(camelToTitleCase(getWords("coolBeansSEE")));
+console.log(camelToTiTleCase("katseKatseSEEKatse"));
+console.log(camelToTiTleCase("insertHTML"));
+console.log(camelToTiTleCase("insertAdjacentHTML"));
+console.log(camelToTiTleCase("firstHTMLElement"));
+console.log(camelToTiTleCase("releaseDate"));
+console.log(camelToTiTleCase());
+console.log(camelToTiTleCase("katseKatseSEEKatse"));
+
